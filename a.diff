@@ -1,0 +1,64 @@
+diff --git a/bigbluebutton-html5/private/config/settings.yml b/bigbluebutton-html5/private/config/settings.yml
+index f4b442d..6fa2901 100755
+--- a/bigbluebutton-html5/private/config/settings.yml
++++ b/bigbluebutton-html5/private/config/settings.yml
+@@ -7,12 +7,12 @@ public:
+     listenOnlyMode: true
+     forceListenOnly: false
+     skipCheck: false
+-    clientTitle: BigBlueButton
+-    appName: BigBlueButton HTML5 Client
++    clientTitle: Cloud2Edu
++    appName: Cloud2Edu HTML5 Client
+     bbbServerVersion: 2.2-dev
+-    copyright: "©2019 BigBlueButton Inc."
++    copyright: "©2020 Cloud2Edu Inc."
+     html5ClientBuild: HTML5_CLIENT_VERSION
+-    helpLink: https://bigbluebutton.org/html5/
++    helpLink: https://www.cloud2edu.com/
+     lockOnJoin: true
+     cdn: ""
+     basename: "/html5client"
+@@ -85,7 +85,7 @@ public:
+     enableNetworkMonitoring: false
+     packetLostThreshold: 10
+   kurento:
+-    wsUrl: HOST
++    wsUrl: wss://ccc.cloud2edu.com/bbb-webrtc-sfu
+     chromeDefaultExtensionKey: akgoaoikmbmhcopjgakkcepdgdgkjfbc
+     chromeDefaultExtensionLink: https://chrome.google.com/webstore/detail/bigbluebutton-screenshare/akgoaoikmbmhcopjgakkcepdgdgkjfbc
+     chromeExtensionKey: KEY
+diff --git a/bigbluebutton-web/grails-app/conf/bigbluebutton.properties b/bigbluebutton-web/grails-app/conf/bigbluebutton.properties
+index 8036762..3398444 100755
+--- a/bigbluebutton-web/grails-app/conf/bigbluebutton.properties
++++ b/bigbluebutton-web/grails-app/conf/bigbluebutton.properties
+@@ -136,8 +136,8 @@ defaultGuestPolicy=ALWAYS_ACCEPT
+ #
+ # native2ascii -encoding UTF8 bigbluebutton.properties bigbluebutton.properties
+ #
+-defaultWelcomeMessage=Welcome to <b>%%CONFNAME%%</b>!<br><br>For help on using BigBlueButton see these (short) <a href="event:http://www.bigbluebutton.org/html5"><u>tutorial videos</u></a>.<br><br>To join the audio bridge click the phone button.  Use a headset to avoid causing background noise for others.
+-defaultWelcomeMessageFooter=This server is running <a href="http://docs.bigbluebutton.org/" target="_blank"><u>BigBlueButton</u></a>.
++defaultWelcomeMessage=Welcome to <b>%%CONFNAME%%</b>!<br><br>For help on using Cloud2Edu see these (short) <a href="event:http://www.cloud2edu.com"><u>tutorial videos</u></a>.<br><br>To join the audio bridge click the phone button.  Use a headset to avoid causing background noise for others.
++defaultWelcomeMessageFooter=This server is running <a href="http://www.cloud2edu.com/" target="_blank"><u>Cloud2Edu</u></a>.
+ 
+ # Default maximum number of users a meeting can have.
+ # Current default is 0 (meeting doesn't have a user limit).
+@@ -209,7 +209,7 @@ keepEvents=false
+ # This URL is where the BBB client is accessible. When a user sucessfully
+ # enters a name and password, she is redirected here to load the client.
+ # Do not commit changes to this field.
+-bigbluebutton.web.serverURL=http://bigbluebutton.example.com
++bigbluebutton.web.serverURL=https://ccc.cloud2edu.com
+ 
+ 
+ #----------------------------------------------------
+@@ -249,7 +249,8 @@ defaultConfigURL=${bigbluebutton.web.serverURL}/client/conf/config.xml
+ apiVersion=2.0
+ 
+ # Salt which is used by 3rd-party apps to authenticate api calls
+-securitySalt=330a8b08c3b4c61533e1d0c5ce1ac88f
++#securitySalt=330a8b08c3b4c61533e1d0c5ce1ac88f
++securitySalt=SQdiJQyqHVy1jnk3Vvp3Ag6BtrdeQJAuA7O5pFn5N9Q
+ 
+ # Directory where we drop the <meeting-id-recorded>.done file
+ recordStatusDir=/var/bigbluebutton/recording/status/recorded
